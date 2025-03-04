@@ -1,0 +1,23 @@
+############################################
+#
+# Script for Siril 1.2.6
+# March 2025
+#
+########### PREPROCESSING SCRIPT ###########
+#
+# Script for color camera preprocessing
+#
+# Needs a set of RAW images
+# in directory:
+#   lights/
+#
+############################################
+
+requires 1.2.6
+
+# Convert Light Frames to .fit files
+cd lights
+convert light -debayer -ser -out=../process
+
+cd ..
+close

@@ -1,0 +1,36 @@
+############################################
+#
+# Script for Siril 1.2.6
+# March 2025
+#
+########### CONVERSION SCRIPT ###########
+#
+# Script for color camera preprocessing
+#
+# Needs 3 sets of RAW images
+# in 3 directories:
+#   biases/
+#   flats/
+#   darks/
+#
+############################################
+
+requires 1.2.6
+
+# Convert Bias Frames to .fit files
+cd biases
+convert bias -debayer -ser -out=../process
+cd ..
+
+# Convert Dark Frames to .fit files
+cd darks
+convert dark -debayer -ser -out=../process
+cd ..
+
+# Convert Flat Frames to .fit files
+cd flats
+convert flat -debayer -ser -out=../process
+cd ..
+
+
+close

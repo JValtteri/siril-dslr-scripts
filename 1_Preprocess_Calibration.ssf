@@ -1,0 +1,36 @@
+############################################
+#
+# Script for Siril 1.2.6
+# March 2025
+#
+########### PREPROCESSING SCRIPT ###########
+#
+# Script for color camera preprocessing
+#
+# Needs 4 sets of RAW images
+# in 4 directories:
+#   biases/
+#   flats/
+#   darks/
+#   lights/
+#
+############################################
+
+requires 1.2.6
+
+cd process
+
+# Stack Bias Frames to bias_stacked.fit
+stack bias rej 3 3 -nonorm
+
+# Stack Dark Frames to dark_stacked.fit
+stack dark rej 3 3 -nonorm
+
+# Pre-process Flat Frames
+preprocess flat -bias=bias_stacked
+
+# Stack Flat Frames to pp_flat_stacked.fit
+stack pp_flat rej 3 3 -norm=mul
+
+cd ..
+close

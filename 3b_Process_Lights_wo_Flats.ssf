@@ -1,0 +1,28 @@
+############################################
+#
+# Script for Siril 1.2.6
+# March 2025
+#
+########### PREPROCESSING SCRIPT ###########
+#
+# Script for color camera preprocessing
+#
+# Needs 3 sets of RAW images
+# in 3 directories:
+#   biases/
+#   darks/
+#   lights/
+#
+############################################
+
+requires 1.2.6
+
+# Pre-process Light Frames without Flats
+cd process
+preprocess light -dark=dark_stacked -cfa -equalize_cfa -debayer
+
+# Align lights
+register pp_light
+
+cd ..
+close

@@ -1,0 +1,24 @@
+############################################
+#
+# Script for Siril 1.2.6
+# March 2025
+#
+########### PREPROCESSING SCRIPT ###########
+#
+# Script for color camera preprocessing
+#
+# Needs a set of RAW images
+# in directory:
+#   lights/
+#
+############################################
+
+requires 1.2.6
+
+cd process
+
+# Stack calibrated lights to result.fit
+stack r_pp_light rej 3 3 -norm=addscale -output_norm -out=../result
+
+cd ..
+close
