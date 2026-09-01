@@ -7,9 +7,9 @@
 #
 # Script for color camera preprocessing
 #
-# Needs a set of RAW images
-# in directory:
-#   lights/
+# Needs a series of light images
+#   process/
+#     r_pp_light.ser
 #
 ############################################
 

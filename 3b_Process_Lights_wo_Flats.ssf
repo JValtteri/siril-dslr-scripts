@@ -7,11 +7,13 @@
 #
 # Script for color camera preprocessing
 #
-# Needs 3 sets of RAW images
-# in 3 directories:
-#   biases/
-#   darks/
-#   lights/
+# Needs stacked calibration images
+#   process/
+#     darks_stacked.fit
+#
+# Outputs:
+#   pp_light.ser
+#   r_pp_light.ser
 #
 ############################################
 

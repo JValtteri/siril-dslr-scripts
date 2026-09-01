@@ -11,13 +11,16 @@
 # in directory:
 #   lights/
 #
+# Outputs:
+#   lights.ser
+#
 ############################################
 
 requires 1.2.6
 
 # Convert Light Frames to .fit files
 cd lights
-convert light -debayer -ser -out=../process
+convert light -ser -out=../process
 
 cd ..
 close

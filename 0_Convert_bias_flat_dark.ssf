@@ -13,24 +13,28 @@
 #   flats/
 #   darks/
 #
+# Outputs:
+#   bias.ser
+#   flat.ser
+#   dark.ser
+#
 ############################################
 
 requires 1.2.6
 
 # Convert Bias Frames to .fit files
 cd biases
-convert bias -debayer -ser -out=../process
-cd ..
-
-# Convert Dark Frames to .fit files
-cd darks
-convert dark -debayer -ser -out=../process
+convert bias -ser -out=../process
 cd ..
 
 # Convert Flat Frames to .fit files
 cd flats
-convert flat -debayer -ser -out=../process
+convert flat -ser -out=../process
 cd ..
 
+# Convert Dark Frames to .fit files
+cd darks
+convert dark -ser -out=../process
+cd ..
 
 close
