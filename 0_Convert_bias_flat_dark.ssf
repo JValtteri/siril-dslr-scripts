@@ -1,7 +1,7 @@
 ############################################
 #
-# Script for Siril 1.2.6
-# March 2025
+# Script for Siril 1.4.4
+# September 2025
 #
 ########### CONVERSION SCRIPT ###########
 #
@@ -20,21 +20,21 @@
 #
 ############################################
 
-requires 1.2.6
+requires 1.4.4
 
-# Convert Bias Frames to .fit files
+# Convert Bias Frames to .ser files
 cd biases
 convert bias -ser -out=../process
 cd ..
 
-# Convert Flat Frames to .fit files
-cd flats
-convert flat -ser -out=../process
-cd ..
-
-# Convert Dark Frames to .fit files
+# Convert Dark Frames to .ser files
 cd darks
 convert dark -ser -out=../process
+cd ..
+
+# Convert Flat Frames to .ser files
+cd flats
+convert flat -ser -out=../process
 cd ..
 
 close

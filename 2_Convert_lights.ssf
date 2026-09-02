@@ -1,7 +1,7 @@
 ############################################
 #
-# Script for Siril 1.2.6
-# March 2025
+# Script for Siril 1.4.4
+# September 2025
 #
 ########### PREPROCESSING SCRIPT ###########
 #
@@ -16,9 +16,9 @@
 #
 ############################################
 
-requires 1.2.6
+requires 1.4.4
 
-# Convert Light Frames to .fit files
+# Convert Light Frames to .ser file
 cd lights
 convert light -ser -out=../process
 

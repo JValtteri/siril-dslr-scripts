@@ -1,7 +1,7 @@
 ############################################
 #
-# Script for Siril 1.2.6
-# March 2025
+# Script for Siril 1.4.4
+# September 2025
 #
 ########### PREPROCESSING SCRIPT ###########
 #
@@ -17,11 +17,11 @@
 #
 ############################################
 
-requires 1.2.6
+requires 1.4.4
 
 # Pre-process Light Frames without Flats
 cd process
-preprocess light -dark=dark_stacked -cfa -equalize_cfa -debayer
+calibrate light -dark=../masters/dark_stacked -cc=dark -cfa -equalize_cfa -debayer
 
 # Align lights
 register pp_light
